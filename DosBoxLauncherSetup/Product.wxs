@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="2BC6E2FF-5BD6-4A36-978A-5139B74BDE95"
+					 Name="PCPlus DOSBox Launcher" 
+					 Language="1033" 
+					 Version="0.3.0" 
+					 Manufacturer="Codeguys.dk" 
+					 UpgradeCode="2515bf04-310e-4910-bfe3-4a37acf6a1a4">
+		<Package InstallerVersion="200" 
+						 Compressed="yes" 
+						 InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed."
+									AllowDowngrades="no"/>
+		
+		<MediaTemplate EmbedCab="yes"/>
+
+    <PropertyRef Id="NETFRAMEWORK45" />
+    <Condition Message="This tool requires .NET Framework 4.5. Please install .NET Framework 4.5, then retry the installer">
+      <![CDATA[Installed OR NETFRAMEWORK45]]>
+    </Condition>
+    
+		<Feature Id="ProductFeature" Title="PCPlus DOSBoxLauncher" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+			<!--<ComponentRef Id="TextFileShortcutComponent" />-->
+      <ComponentRef Id="ProgramMenuShortcutsComponent" />
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			
+      <Directory Id="ProgramFilesFolder">
+				<Directory Id ="MyCompany" Name="CodeGuys">
+					<Directory Id="InstallFolder" Name="PCPlus DOSBoxLauncher"/>
+				</Directory>
+			</Directory>
+
+<!--			<Directory Id="ProgramMenuFolder" /> -->
+
+      <!-- shortcut directories -->
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ProgramMenuVendorFolder" Name="Codeguys.dk">
+          <Directory Id="ProgramMenuProductFolder" Name="PCPlusDOSBoxLauncher">
+            <Directory Id="ProgramMenuProductSubFolder" Name="Help" />
+          </Directory>
+        </Directory>
+      </Directory>
+		</Directory>
+
+    <Property Id="WIXUI_INSTALLDIR" Value="InstallFolder"/>
+    <UIRef Id="WixUI_InstallDir" />
+    
+	</Fragment>
+
+  <!-- <ProgramMenuFolder : Vendor, product, productsubfolder> -->
+  <Fragment>
+    <DirectoryRef Id="ProgramMenuProductFolder">
+      <Component Id="ProgramMenuShortcutsComponent" 
+                 Guid="484BC802-B047-4346-8573-FC8BCBBF1808">
+        <!-- create folders -->
+        <CreateFolder Directory="ProgramMenuVendorFolder" />
+        <CreateFolder Directory="ProgramMenuProductFolder" />
+        <CreateFolder Directory="ProgramMenuProductSubFolder" />
+        <!-- remove folder -->
+        <RemoveFolder Id="RemoveProgramMenuVendorFolder"
+           Directory="ProgramMenuVendorFolder"
+           On="uninstall" />
+        <RemoveFolder Id="RemoveProgramMenuProductFolder"
+           Directory="ProgramMenuProductFolder"
+           On="uninstall" />
+        <RemoveFolder Id="RemoveProgramMenuProductSubFolder"
+           Directory="ProgramMenuProductSubFolder"
+           On="uninstall" />
+        <!-- main shortcut -->
+        <Shortcut
+           Id="MainShortcut"
+           Name="Run PCPlus DOSBoxLauncher"
+           Description="Run PCPlus in DOSBox"
+           Target="[InstallFolder]DosBoxLauncher.exe"
+           WorkingDirectory="InstallFolder" />
+        <!-- shortcut in subfolder -->
+        <Shortcut
+           Id="SubFolderShortcut1"
+           Name="PcPlus DosBox Launcher - ReadMe.pdf"
+           Target="[InstallFolder]PcPlus DosBox Launcher - ReadMe.pdf"
+           Directory="ProgramMenuProductSubFolder" />
+        <Shortcut
+           Id="SubFolderShortcut2"
+           Name="PcPlus DosBox Launcher - Installation.pdf"
+           Target="[InstallFolder]PcPlus DosBox Launcher - Installation.pdf"
+           Directory="ProgramMenuProductSubFolder" />
+        <Shortcut
+           Id="SubFolderShortcut3"
+           Name="PcPlus DosBox Launcher - Brugervejledning.pdf"
+           Target="[InstallFolder]PcPlus DosBox Launcher - Brugervejledning.pdf"
+           Directory="ProgramMenuProductSubFolder" />
+        <Shortcut
+           Id="SubFolderShortcut4"
+           Name="PcPlus DosBox Launcher - SystemSetup.pdf"
+           Target="[InstallFolder]PcPlus DosBox Launcher - SystemSetup.pdf"
+           Directory="ProgramMenuProductSubFolder" />
+        <!--
+            RegistryValue whichs serves as KeyPath
+         -->
+        <RegistryValue
+           Root="HKCU"
+           Key="Software\MyVendor\MyProduct"
+           Name="InstalledStartMenuShortcuts"
+           Type="integer"
+           Value="1" />
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+  <!--
+  Components
+  -->
+  <Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="InstallFolder">			
+			<Component Id="ProductComponent">
+				<File Source="$(var.DosBoxLauncher.TargetPath)" />
+			</Component>
+			<!--<Component Id="ProductConfiguration">
+				<File Source="..\DosBoxLauncher\PCPlusFolders.xml" Name="PCPlusFolders.xml"/>
+			</Component>-->
+      <!--<to be ommited>-->
+      <!--<Component Id="TextFile">
+				<File Source="ReadMe.txt" Name="ReadMe.txt"/>
+			</Component>-->
+      <Component Id="ReadMe">
+        <File Source="Help\PcPlus DosBox Launcher - ReadMe.pdf" Name="PcPlus DosBox Launcher - ReadMe.pdf"/>
+      </Component>
+      <Component Id="Installation">
+        <File Source="Help\PcPlus DosBox Launcher - Installation.pdf" Name="PcPlus DosBox Launcher - Installation.pdf"/>
+      </Component>
+      <Component Id="Brugervejledning">
+        <File Source="Help\PcPlus DosBox Launcher - Brugervejledning.pdf" Name="PcPlus DosBox Launcher - Brugervejledning.pdf"/>
+      </Component>
+      <Component Id="SystemSetup">
+        <File Source="Help\PcPlus DosBox Launcher - SystemSetup.pdf" Name="PcPlus DosBox Launcher - SystemSetup.pdf"/>
+      </Component>
+		</ComponentGroup>
+	</Fragment>
+</Wix>
