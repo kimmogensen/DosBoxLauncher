@@ -1,7 +1,7 @@
 # DosBoxLauncher
 A tool depending on DosBox. 
 
-#Decription
+#Description
 This tool let users configure what to write in the DosBox config file. 
 By executing an old financial dos program 'PCPlus' using DosBox users are able to run 
 the ancient but beloved program on newer Windows OS 
