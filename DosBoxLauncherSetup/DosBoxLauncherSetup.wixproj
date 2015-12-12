@@ -11,14 +11,10 @@
     <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' AND '$(MSBuildExtensionsPath32)' != '' ">$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
     <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
     <Name>DosBoxLauncherSetup</Name>
-    <SccProjectName>
-    </SccProjectName>
-    <SccProvider>
-    </SccProvider>
-    <SccAuxPath>
-    </SccAuxPath>
-    <SccLocalPath>
-    </SccLocalPath>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <OutputPath>bin\$(Configuration)\</OutputPath>
@@ -45,22 +41,17 @@
   <ItemGroup>
     <Content Include="dll\WixNetFxExtension.dll" />
     <Content Include="dll\WixUIExtension.dll" />
+    <Content Include="Help\PcPlus DosBox Launcher - Brugervejledning.doc" />
     <Content Include="Help\PcPlus DosBox Launcher - Brugervejledning.pdf" />
+    <Content Include="Help\PcPlus DosBox Launcher - Installation.doc" />
     <Content Include="Help\PcPlus DosBox Launcher - Installation.pdf" />
-    <Content Include="Help\PcPlus DosBox Launcher - ReadMe.pdf" />
-    <Content Include="Help\PcPlus DosBox Launcher - SystemSetup.pdf" />
-    <Content Include="MD Files2\HowTo.md" />
-    <Content Include="MD Files2\ReadMe.html" />
-    <Content Include="MD Files2\README.md" />
-    <Content Include="MD Files\HowTo.html" />
-    <Content Include="MD Files\HowTo.md" />
-    <Content Include="MD Files\ReadMe.html" />
-    <Content Include="MD Files\README.md" />
+    <Content Include="Help\PcPlus DosBox Launcher - Intro.doc" />
+    <Content Include="Help\PcPlus DosBox Launcher - Intro.pdf" />
+    <Content Include="Help\PcPlus DosBox Launcher - License.pdf" />
+    <Content Include="Help\PcPlus DosBox Launcher - Warranty.pdf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="dll" />
-    <Folder Include="MD Files" />
-    <Folder Include="MD Files2\" />
     <Folder Include="Help" />
   </ItemGroup>
   <ItemGroup>

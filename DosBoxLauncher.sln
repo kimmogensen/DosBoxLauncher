@@ -1,4 +1,3 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
@@ -10,6 +9,18 @@ EndProject
 Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "DosBoxLauncherSetup", "DosBoxLauncherSetup\DosBoxLauncherSetup.wixproj", "{10DF2B8C-555B-4075-9ACD-A86023A80E9D}"
 EndProject
 Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://kimmogensen.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = DosBoxLauncher\\DosBoxLauncher.csproj
+		SccProjectName1 = DosBoxLauncher
+		SccLocalPath1 = DosBoxLauncher
+		SccProjectUniqueName2 = DosBoxLauncherSetup\\DosBoxLauncherSetup.wixproj
+		SccProjectName2 = DosBoxLauncherSetup
+		SccLocalPath2 = DosBoxLauncherSetup
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		CD_ROM|Any CPU = CD_ROM|Any CPU
 		CD_ROM|Mixed Platforms = CD_ROM|Mixed Platforms

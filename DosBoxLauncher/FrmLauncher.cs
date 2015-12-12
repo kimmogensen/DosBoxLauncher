@@ -248,7 +248,7 @@ namespace DosBoxLauncher
         private void DisplayVersion()
         {
             string version = string.Format(
-                "PCPlus-DOSBoxLauncher - version: {0} - ®codeguys.dk",
+                "PCPlus-DOSBoxLauncher - version: {0} - Copyright (C) 2015 ® codeguys.dk",
                 ((System.Reflection.AssemblyFileVersionAttribute)System.Reflection.Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(System.Reflection.AssemblyFileVersionAttribute), false)[0]).Version);
             this.Text = version;
         }
@@ -765,7 +765,7 @@ namespace DosBoxLauncher
                 "{0}{1}{2}",
                 Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86),
                 @"\CodeGuys\PCPlus DOSBoxLauncher\",
-                @"PcPlus DosBox Launcher - ReadMe.pdf");
+                @"PcPlus DosBox Launcher - Intro.pdf");
             this.ShowHelpFile(filename);
         }
 
@@ -785,19 +785,10 @@ namespace DosBoxLauncher
                 "{0}{1}{2}",
                  Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86),
                  @"\CodeGuys\PCPlus DOSBoxLauncher\",
-                 @"PcPlus DosBox Launcher - Brugervejledning.pdf");
+                 @"PcPlus DosBox Launcher - Installation.pdf");
             this.ShowHelpFile(filename);
         }
 
-        private void BtnSystemSetup_Click(object sender, EventArgs e)
-        {
-            string filename = string.Format(
-                "{0}{1}{2}",
-                Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86),
-                @"\CodeGuys\PCPlus DOSBoxLauncher\",
-                @"PcPlus DosBox Launcher - SystemSetup.pdf");
-            this.ShowHelpFile(filename);
-        }
 
         private void ShowHelpFile(string filename)
         {
@@ -809,6 +800,26 @@ namespace DosBoxLauncher
             {
                 this.ShowCriticalError(string.Format("An error occured trying to read the helpfile '{0}' {1}", filename, e));
             }
+        }
+
+        private void BtnViewGnuLicense_Click(object sender, EventArgs e)
+        {
+            string filename = string.Format(
+                "{0}{1}{2}",
+                Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86),
+                @"\CodeGuys\PCPlus DOSBoxLauncher\",
+                @"PcPlus DosBox Launcher - License.pdf");
+            this.ShowHelpFile(filename);
+        }
+
+        private void BtnViewGnuWarranty_Click(object sender, EventArgs e)
+        {
+            string filename = string.Format(
+                "{0}{1}{2}",
+                Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86),
+                @"\CodeGuys\PCPlus DOSBoxLauncher\",
+                @"PcPlus DosBox Launcher - Warranty.pdf");
+            this.ShowHelpFile(filename);
         }
     }
 }
