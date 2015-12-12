@@ -93,6 +93,13 @@ namespace DosBoxLauncher
             this.tbDOSBoxExe = new System.Windows.Forms.TextBox();
             this.lblInfoDosBoxExeConfig = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.BtnViewGnuLicense = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.BtnViewGnuWarranty = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.BtnReadMe = new System.Windows.Forms.Button();
@@ -100,8 +107,6 @@ namespace DosBoxLauncher
             this.BtnBasicConfiguration = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.BtnUserManual = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.BtnSystemSetup = new System.Windows.Forms.Button();
             this.lblMessage = new System.Windows.Forms.Label();
             this.tabPage2.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -118,6 +123,7 @@ namespace DosBoxLauncher
             this.panel1.SuspendLayout();
             this.panelDosBoxConfig.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -607,6 +613,7 @@ namespace DosBoxLauncher
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Gainsboro;
+            this.tabPage1.Controls.Add(this.panel9);
             this.tabPage1.Controls.Add(this.panel8);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -614,6 +621,77 @@ namespace DosBoxLauncher
             this.tabPage1.Size = new System.Drawing.Size(678, 399);
             this.tabPage1.TabIndex = 4;
             this.tabPage1.Text = "Help";
+            // 
+            // panel9
+            // 
+            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel9.Controls.Add(this.label14);
+            this.panel9.Controls.Add(this.richTextBox1);
+            this.panel9.Controls.Add(this.label12);
+            this.panel9.Controls.Add(this.BtnViewGnuLicense);
+            this.panel9.Controls.Add(this.label13);
+            this.panel9.Controls.Add(this.BtnViewGnuWarranty);
+            this.panel9.Location = new System.Drawing.Point(9, 150);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(660, 234);
+            this.panel9.TabIndex = 1;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(105, 23);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(189, 13);
+            this.label14.TabIndex = 12;
+            this.label14.Text = "GNU GENERAL PUBLIC LICENSE v2";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.SystemColors.Info;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Location = new System.Drawing.Point(19, 54);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(315, 120);
+            this.richTextBox1.TabIndex = 11;
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(451, 112);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(56, 13);
+            this.label12.TabIndex = 5;
+            this.label12.Text = "Conditions";
+            // 
+            // BtnViewGnuLicense
+            // 
+            this.BtnViewGnuLicense.Location = new System.Drawing.Point(556, 106);
+            this.BtnViewGnuLicense.Name = "BtnViewGnuLicense";
+            this.BtnViewGnuLicense.Size = new System.Drawing.Size(75, 25);
+            this.BtnViewGnuLicense.TabIndex = 4;
+            this.BtnViewGnuLicense.Text = "View";
+            this.BtnViewGnuLicense.UseVisualStyleBackColor = true;
+            this.BtnViewGnuLicense.Click += new System.EventHandler(this.BtnViewGnuLicense_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(457, 155);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(50, 13);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "Warranty";
+            // 
+            // BtnViewGnuWarranty
+            // 
+            this.BtnViewGnuWarranty.Location = new System.Drawing.Point(556, 149);
+            this.BtnViewGnuWarranty.Name = "BtnViewGnuWarranty";
+            this.BtnViewGnuWarranty.Size = new System.Drawing.Size(75, 25);
+            this.BtnViewGnuWarranty.TabIndex = 2;
+            this.BtnViewGnuWarranty.Text = "View";
+            this.BtnViewGnuWarranty.UseVisualStyleBackColor = true;
+            this.BtnViewGnuWarranty.Click += new System.EventHandler(this.BtnViewGnuWarranty_Click);
             // 
             // panel8
             // 
@@ -624,8 +702,6 @@ namespace DosBoxLauncher
             this.panel8.Controls.Add(this.BtnBasicConfiguration);
             this.panel8.Controls.Add(this.label6);
             this.panel8.Controls.Add(this.BtnUserManual);
-            this.panel8.Controls.Add(this.label2);
-            this.panel8.Controls.Add(this.BtnSystemSetup);
             this.panel8.Location = new System.Drawing.Point(10, 10);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(660, 99);
@@ -634,11 +710,11 @@ namespace DosBoxLauncher
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(353, 67);
+            this.label9.Location = new System.Drawing.Point(379, 67);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(127, 13);
+            this.label9.Size = new System.Drawing.Size(113, 13);
             this.label9.TabIndex = 9;
-            this.label9.Text = "DosBoxLauncher readme";
+            this.label9.Text = "DosBoxLauncher Intro";
             // 
             // BtnReadMe
             // 
@@ -672,7 +748,7 @@ namespace DosBoxLauncher
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(25, 32);
+            this.label6.Location = new System.Drawing.Point(49, 32);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(159, 13);
             this.label6.TabIndex = 5;
@@ -687,25 +763,6 @@ namespace DosBoxLauncher
             this.BtnUserManual.Text = "Help";
             this.BtnUserManual.UseVisualStyleBackColor = true;
             this.BtnUserManual.Click += new System.EventHandler(this.BtnUserManual_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(353, 32);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(153, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "DosBoxLauncher system setup";
-            // 
-            // BtnSystemSetup
-            // 
-            this.BtnSystemSetup.Location = new System.Drawing.Point(555, 26);
-            this.BtnSystemSetup.Name = "BtnSystemSetup";
-            this.BtnSystemSetup.Size = new System.Drawing.Size(75, 25);
-            this.BtnSystemSetup.TabIndex = 2;
-            this.BtnSystemSetup.Text = "Help";
-            this.BtnSystemSetup.UseVisualStyleBackColor = true;
-            this.BtnSystemSetup.Click += new System.EventHandler(this.BtnSystemSetup_Click);
             // 
             // lblMessage
             // 
@@ -749,6 +806,8 @@ namespace DosBoxLauncher
             this.panelDosBoxConfig.ResumeLayout(false);
             this.panelDosBoxConfig.PerformLayout();
             this.tabPage1.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.ResumeLayout(false);
@@ -812,9 +871,14 @@ namespace DosBoxLauncher
         private System.Windows.Forms.Button BtnBasicConfiguration;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button BtnUserManual;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button BtnSystemSetup;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button BtnReadMe;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button BtnViewGnuLicense;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button BtnViewGnuWarranty;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Label label14;
     }
 }

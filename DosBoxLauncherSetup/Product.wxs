@@ -82,8 +82,8 @@
         <!-- shortcut in subfolder -->
         <Shortcut
            Id="SubFolderShortcut1"
-           Name="PcPlus DosBox Launcher - ReadMe.pdf"
-           Target="[InstallFolder]PcPlus DosBox Launcher - ReadMe.pdf"
+           Name="PcPlus DosBox Launcher - Intro.pdf"
+           Target="[InstallFolder]PcPlus DosBox Launcher - Intro.pdf"
            Directory="ProgramMenuProductSubFolder" />
         <Shortcut
            Id="SubFolderShortcut2"
@@ -96,9 +96,14 @@
            Target="[InstallFolder]PcPlus DosBox Launcher - Brugervejledning.pdf"
            Directory="ProgramMenuProductSubFolder" />
         <Shortcut
-           Id="SubFolderShortcut4"
-           Name="PcPlus DosBox Launcher - SystemSetup.pdf"
-           Target="[InstallFolder]PcPlus DosBox Launcher - SystemSetup.pdf"
+           Id="SubFolderShortcut5"
+           Name="PcPlus DosBox Launcher - License.pdf"
+           Target="[InstallFolder]PcPlus DosBox Launcher - License.pdf"
+           Directory="ProgramMenuProductSubFolder" />
+        <Shortcut
+           Id="SubFolderShortcut6"
+           Name="PcPlus DosBox Launcher - Warranty.pdf"
+           Target="[InstallFolder]PcPlus DosBox Launcher - Warranty.pdf"
            Directory="ProgramMenuProductSubFolder" />
         <!--
             RegistryValue whichs serves as KeyPath
@@ -125,10 +130,10 @@
 			</Component>-->
       <!--<to be ommited>-->
       <!--<Component Id="TextFile">
-				<File Source="ReadMe.txt" Name="ReadMe.txt"/>
+				<File Source="ReadMe.txt" Name="ReadMeIntro.txt"/>
 			</Component>-->
-      <Component Id="ReadMe">
-        <File Source="Help\PcPlus DosBox Launcher - ReadMe.pdf" Name="PcPlus DosBox Launcher - ReadMe.pdf"/>
+      <Component Id="Intro">
+        <File Source="Help\PcPlus DosBox Launcher - Intro.pdf" Name="PcPlus DosBox Launcher - Intro.pdf"/>
       </Component>
       <Component Id="Installation">
         <File Source="Help\PcPlus DosBox Launcher - Installation.pdf" Name="PcPlus DosBox Launcher - Installation.pdf"/>
@@ -136,8 +141,11 @@
       <Component Id="Brugervejledning">
         <File Source="Help\PcPlus DosBox Launcher - Brugervejledning.pdf" Name="PcPlus DosBox Launcher - Brugervejledning.pdf"/>
       </Component>
-      <Component Id="SystemSetup">
-        <File Source="Help\PcPlus DosBox Launcher - SystemSetup.pdf" Name="PcPlus DosBox Launcher - SystemSetup.pdf"/>
+      <Component Id="License">
+        <File Source="Help\PcPlus DosBox Launcher - License.pdf" Name="PcPlus DosBox Launcher - License.pdf"/>
+      </Component>
+      <Component Id="Warranty">
+        <File Source="Help\PcPlus DosBox Launcher - Warranty.pdf" Name="PcPlus DosBox Launcher - Warranty.pdf"/>
       </Component>
 		</ComponentGroup>
 	</Fragment>
